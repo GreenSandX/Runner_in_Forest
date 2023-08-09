@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Entities/Entity.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Components/WalkMoveComp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Components/StateMgr.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Components/PlayerController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Components/Performer.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Player_test" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="PlayerController" parent="." instance=ExtResource( 4 )]
+
+[node name="WalkMoveComp" parent="." instance=ExtResource( 2 )]
+
+[node name="StateComp" parent="." instance=ExtResource( 3 )]
+
+[node name="Performer" parent="." instance=ExtResource( 5 )]

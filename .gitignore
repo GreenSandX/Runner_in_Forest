@@ -1,0 +1,8 @@
+# ignore when git add and commit
+src/.import/
+*.import
+src/default_env.tres
+src/export_presets.cfg
+src/Assets/Music/
+*.png~
+*.kra
